@@ -6,4 +6,8 @@
     <RootNamespace>Clase_1_2021_1c.Consola</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PW3-2021-2c-Clase-1.Logica\PW3-2021-2c-Clase-1.Logica.csproj" />
+  </ItemGroup>
+
 </Project>

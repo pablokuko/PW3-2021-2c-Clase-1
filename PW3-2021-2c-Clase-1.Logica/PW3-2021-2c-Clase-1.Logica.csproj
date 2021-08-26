@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>PW3_2021_2c_Clase_1.Logica</RootNamespace>
+  </PropertyGroup>
+
+</Project>
