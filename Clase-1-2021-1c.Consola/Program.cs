@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PW3_2021_2c_Clase_1.Logica;
+using System;
 
 namespace Clase_1_2021_1c.Consola
 {
@@ -14,10 +15,8 @@ namespace Clase_1_2021_1c.Consola
             Console.WriteLine("Ingrese otro nro:");
             string strNum2 = Console.ReadLine();
 
-            int num1 = int.Parse(strNum1);
-            int num2 = int.Parse(strNum2);
-
-            Console.WriteLine("La suma es: " + (num1 + num2));
+            //Console.WriteLine("La suma es: " + Calculadora.Sumar(strNum1, strNum2));
+            Console.WriteLine($"La suma es: {Calculadora.Sumar(strNum1, strNum2)}");
         }
     }
 }
