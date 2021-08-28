@@ -7,7 +7,8 @@ namespace Clase_1_2021_1c.Consola
     {
         static void Main(string[] args)
         {
-            EjercicioBola8Magica();
+            EjercicioImc();
+            //EjercicioBola8Magica();
             //EjericicioCalculadora();
         }
 
@@ -38,6 +39,25 @@ namespace Clase_1_2021_1c.Consola
 
             //Console.WriteLine("La suma es: " + Calculadora.Sumar(strNum1, strNum2));
             Console.WriteLine($"La suma es: {Calculadora.Sumar(strNum1, strNum2)}");
+        }
+
+        private static void EjercicioImc()
+        {
+            Console.WriteLine("Ingrese la altura en centimetros:");
+            Console.ForegroundColor = ConsoleColor.Green;
+            string num1 = Console.ReadLine();
+            double altura = double.Parse(num1);
+            Console.ResetColor();
+            Console.WriteLine("Ingrese su peso en kilogramos:");
+            Console.ForegroundColor = ConsoleColor.Green;
+            string num2 = Console.ReadLine();
+            double peso = double.Parse(num2);
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("---------- Resultado del indice de masa corporar es ----------");
+            Console.WriteLine($"\n {IMC.CalcularIndice(altura, peso)}\n");
+            Console.WriteLine($"-------------------- Fin del programa ------------------------");
+            Console.ResetColor();
         }
     }
 }
