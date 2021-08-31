@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace PW3_2021_2c_Clase_1.Logica
 {
-    class IndiceMasaCorporal
+    public class IndiceMasaCorporal
     {
 
-        public static double Indice(string peso, string altura)
+        public static Double Indice(string valor1, string valor2)
         {
 
-            if (!int.TryParse(peso, out int num1))
+            if (!int.TryParse(valor1, out int peso))
             {
                 throw new ArgumentException("El valor ingresado no es un nro entero valido.");
             }
 
-            if (!int.TryParse(altura, out int num2))
+            if (!int.TryParse(valor2, out int altura))
             {
                 throw new ArgumentException("El valor ingresado no es un nro entero valido.");
             }
 
-            return num1 / Math.Pow(num2, 2);
+            int altura2;
+            altura2 = altura * 100;
+            return peso/(altura2*altura2);
 
         }
     }

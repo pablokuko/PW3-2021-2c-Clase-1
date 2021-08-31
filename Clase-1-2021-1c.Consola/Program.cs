@@ -68,7 +68,7 @@ namespace Clase_1_2021_1c.Consola
             Console.WriteLine("Ingrese altura (en centímetros):");
             string altura = Console.ReadLine();
 
-            Console.WriteLine("El indice es:") ;
+            Console.WriteLine("El indice es:" + IndiceMasaCorporal.Indice(peso, altura));
 
         }
     }
