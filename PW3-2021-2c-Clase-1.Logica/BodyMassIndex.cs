@@ -10,7 +10,7 @@ namespace PW3_2021_2c_Clase_1.Logica {
 			string heightInput;
 			double height = -1;
 
-			Console.WriteLine("Ingrese su altura en m (puede usar coma)");
+			Console.WriteLine("Ingrese su altura en m (puede usar coma). Ejemplo: 1,85");
 			heightInput = Console.ReadLine();
 
 			try {
@@ -26,7 +26,7 @@ namespace PW3_2021_2c_Clase_1.Logica {
 			string weightInput;
 			double weight = -1;
 
-			Console.WriteLine("Ingrese su peso en kg (puede usar coma)");
+			Console.WriteLine("Ingrese su peso en kg (puede usar coma). Ejemplo: 80,7");
 			weightInput = Console.ReadLine();
 
 			try {
@@ -78,16 +78,6 @@ namespace PW3_2021_2c_Clase_1.Logica {
 			}
 
 			return subCategory;
-		}
-
-		public static void tryAgain() {
-			Console.WriteLine("¿Reintentar? Y / N");
-			string answer = Console.ReadLine().ToUpper();
-			if (answer == "Y") {
-				Console.WriteLine("Hasta la proxima.");
-			} else if (answer == "N") {
-				Environment.Exit(0);
-			}
 		}
 	}
 }
