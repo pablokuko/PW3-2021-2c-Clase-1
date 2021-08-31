@@ -22,9 +22,11 @@ namespace PW3_2021_2c_Clase_1.Logica
                 throw new ArgumentException("El valor ingresado no es un nro entero valido.");
             }
 
-            int altura2;
-            altura2 = altura * 100;
-            return peso/(altura2*altura2);
+            double altura2, altura3;
+            altura2 = altura/100;
+            altura3 = altura2*altura2;
+
+            return (peso/altura3);
 
         }
     }
