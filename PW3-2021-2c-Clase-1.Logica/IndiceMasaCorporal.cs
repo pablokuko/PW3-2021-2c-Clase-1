@@ -9,7 +9,7 @@ namespace PW3_2021_2c_Clase_1.Logica
     class IndiceMasaCorporal
     {
 
-        public static double indice (string peso, string altura)
+        public static double Indice(string peso, string altura)
         {
 
             if (!int.TryParse(peso, out int num1))
