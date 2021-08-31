@@ -7,8 +7,27 @@ namespace Clase_1_2021_1c.Consola
     {
         static void Main(string[] args)
         {
-            EjercicioBola8Magica();
-            //EjericicioCalculadora();
+            String valor;
+
+            Console.WriteLine("Presionar opcion correspondiente");
+            Console.WriteLine("1 Calculadora");
+            Console.WriteLine("2 Bola Magica");
+            Console.WriteLine("3 Indice de masa corporal");
+
+            valor = Console.ReadLine(); 
+
+            switch (valor)
+            {
+                case "1": EjercicioCalculadora(); 
+                    break;
+
+                case "2": EjercicioBola8Magica();
+                    break;
+
+                case "3": EjercicioIndiceMasaCorporal();
+                    break;
+            }
+            
         }
 
         private static void EjercicioBola8Magica()
@@ -38,6 +57,19 @@ namespace Clase_1_2021_1c.Consola
 
             //Console.WriteLine("La suma es: " + Calculadora.Sumar(strNum1, strNum2));
             Console.WriteLine($"La suma es: {Calculadora.Sumar(strNum1, strNum2)}");
+        }
+
+        private static void EjercicioIndiceMasaCorporal()
+        {
+
+            Console.WriteLine("Ingrese peso (en Kilogramos):");
+            string peso = Console.ReadLine();
+
+            Console.WriteLine("Ingrese altura (en centímetros):");
+            string altura = Console.ReadLine();
+
+            Console.WriteLine("El indice es:");
+
         }
     }
 }
