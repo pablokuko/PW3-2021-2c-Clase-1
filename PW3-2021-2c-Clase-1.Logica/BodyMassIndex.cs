@@ -5,7 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PW3_2021_2c_Clase_1.Logica {
-    public static class BodyMassIndex {
+	public static class BMIcategories {
+		public const string
+			BajoPeso = "Bajo peso",
+			Normal = "Peso normal",
+			Sobrepeso = "Sobrepeso";
+	}
+
+	public static class BMIsubCategories {
+		public const string
+			DelgadezSevera = "Delgadez severa (< 18.50)",
+			DelgadezModerada = "Delgadez moderada (16.00 - 17.00)",
+			DelgadezLeve = "Delgadez leve (17.00 - 18.50)",
+			Normal = "(18.50 - 25.00)",
+			Preobesidad = "Preobesidad (25.00 - 30.00)",
+			ObesidadLeve = "Obesidad leve (30.00 - 35.00)",
+			ObesidadMedia = "Obesidad media (35.00 - 40.00)",
+			ObesidadMorbida = "Obesidad mórbida (> 40.00)";
+	}
+
+	public static class BodyMassIndex {
 		public static void askFor(string heightOrWeightString, out float heightOrWeight) {
 			string heightOrWeightInput;
 			string example = heightOrWeightString == "altura" ? "1,85" : "80,7";
@@ -28,11 +47,11 @@ namespace PW3_2021_2c_Clase_1.Logica {
 			string category = "";
 
 			if (bmi < 18.50) {
-				category = "Bajo peso";
+				category = BMIcategories.BajoPeso;
 			} else if (bmi >= 18.50 && bmi <= 24.99) {
-				category = "Peso normal";
+				category = BMIcategories.Normal;
 			} else {
-				category = "Sobrepeso";
+				category = BMIcategories.Sobrepeso;
 			}
 
 			return category;
@@ -42,21 +61,21 @@ namespace PW3_2021_2c_Clase_1.Logica {
 			string subCategory = "";
 			
 			if (bmi < 18.50) {
-				subCategory = "Delgadez severa (< 18.50)";
+				subCategory = BMIsubCategories.DelgadezSevera;
 			} else if (bmi >= 16.00 && bmi <= 16.99) {
-				subCategory = "Delgadez moderada (16.00 - 17.00)";
+				subCategory = BMIsubCategories.DelgadezModerada;
 			} else if (bmi >= 17.00 && bmi <= 18.49) {
-				subCategory = "Delgadez leve (17.00 - 18.50)";
+				subCategory = BMIsubCategories.DelgadezLeve;
 			} else if (bmi >= 18.50 && bmi <= 24.99) {
-				subCategory = "(18.50 - 25.00)";
+				subCategory = BMIsubCategories.Normal;
 			} else if (bmi >= 25.00 && bmi <= 29.99) {
-				subCategory = "Preobesidad (25.00 - 30.00)";
+				subCategory = BMIsubCategories.Preobesidad;
 			} else if (bmi >= 30.00 && bmi <= 34.99) {
-				subCategory = "Obesidad leve (30.00 - 35.00)";
+				subCategory = BMIsubCategories.ObesidadLeve;
 			} else if (bmi >= 35.00 && bmi <= 39.99) {
-				subCategory = "Obesidad media (35.00 - 40.00)";
+				subCategory = BMIsubCategories.ObesidadMedia;
 			} else if (bmi >= 40.00) {
-				subCategory = "Obesidad mórbida (> 40.00)";
+				subCategory = BMIsubCategories.ObesidadMorbida;
 			}
 
 			return subCategory;
