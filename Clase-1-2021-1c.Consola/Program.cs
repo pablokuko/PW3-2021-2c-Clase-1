@@ -26,6 +26,9 @@ namespace Clase_1_2021_1c.Consola
 
                 case "3": EjercicioIndiceMasaCorporal();
                     break;
+
+                default: Console.WriteLine("Numero invalido");
+                    break;
             }
             
         }
@@ -61,15 +64,23 @@ namespace Clase_1_2021_1c.Consola
 
         private static void EjercicioIndiceMasaCorporal()
         {
+            string pregunta;
 
-            Console.WriteLine("Ingrese peso (en Kilogramos):");
-            string peso = Console.ReadLine();
+            do
+            {
 
-            Console.WriteLine("Ingrese altura (en centímetros):");
-            string altura = Console.ReadLine();
+                Console.WriteLine("Ingrese peso (en Kilogramos):");
+                string peso = Console.ReadLine();
 
-            Console.WriteLine("El indice es:" + IndiceMasaCorporal.Indice(peso, altura));
+                Console.WriteLine("Ingrese altura (en centímetros):");
+                string altura = Console.ReadLine();
 
+                IndiceMasaCorporal.Indice(peso, altura);
+
+                Console.WriteLine("Seguir calculando S / N ");
+                pregunta = Console.ReadLine();
+
+            } while (pregunta != "n");
         }
     }
 }
