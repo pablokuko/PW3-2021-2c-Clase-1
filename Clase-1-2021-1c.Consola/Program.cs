@@ -10,22 +10,19 @@ namespace Clase_1_2021_1c.Consola {
 		}
 
 		private static void EjercicioIMC() {
-			double height = -1;
-			double weight = -1;
-			double bmi;
+			float heightNumber;
+			float weightNumber;
+			float bmi;
 
-			string category;
+			string height = "altura";
+			string weight = "peso";
+			string category;			   
 			string subCategory;
 
-			while (height <= 0) {
-				height = BodyMassIndex.askForHeight();
-			}
+			BodyMassIndex.askFor(height, out heightNumber);
+			BodyMassIndex.askFor(weight, out weightNumber);
 
-			while (weight <= 0) {
-				weight = BodyMassIndex.askForWeight();
-			}
-
-			bmi = BodyMassIndex.calcBMI(height, weight);
+			bmi = BodyMassIndex.calcBMI(heightNumber, weightNumber);
 			category = BodyMassIndex.getCategoryConsidering(bmi);
 			subCategory = BodyMassIndex.getSubcategoryConsidering(bmi);
 

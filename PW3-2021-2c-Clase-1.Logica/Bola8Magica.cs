@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PW3_2021_2c_Clase_1.Logica
-{
-    public static class Bola8Magica
-    {
+namespace PW3_2021_2c_Clase_1.Logica {
+    public static class Bola8Magica {
         private static string[] _respuestasPosibles;
 
-        static Bola8Magica()
-        {
-            _respuestasPosibles = new string[]
-            {
+        static Bola8Magica() {
+            _respuestasPosibles = new string[] {
                 "En mi opinión, sí",
                 "Es cierto",
                 "Es decididamente así",
@@ -37,8 +33,7 @@ namespace PW3_2021_2c_Clase_1.Logica
             };
         }
 
-        public static string Preguntar(string mensaje)
-        {
+        public static string Preguntar(string mensaje) {
             Random rand = new Random();
             //return _respuestasPosibles.OrderBy(o => Guid.NewGuid()).FirstOrDefault();
             return _respuestasPosibles[rand.Next(0, _respuestasPosibles.Count() - 1)];

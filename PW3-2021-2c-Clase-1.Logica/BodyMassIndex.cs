@@ -6,43 +6,25 @@ using System.Threading.Tasks;
 
 namespace PW3_2021_2c_Clase_1.Logica {
     public static class BodyMassIndex {
-		public static double askForHeight() {
-			string heightInput;
-			double height = -1;
+		public static void askFor(string heightOrWeightString, out float heightOrWeight) {
+			string heightOrWeightInput;
+			string example = heightOrWeightString == "altura" ? "1,85" : "80,7";
 
-			Console.WriteLine("Ingrese su altura en m (puede usar coma). Ejemplo: 1,85");
-			heightInput = Console.ReadLine();
+			do {
+				Console.WriteLine($"Ingrese su { heightOrWeightString } en m (puede usar coma). Ejemplo: { example }");
+				heightOrWeightInput = Console.ReadLine();
 
-			try {
-				 height = double.Parse(heightInput);
-			} catch (Exception) {
-				Console.WriteLine("El valor ingresado de altura no es válido.");
-			}
-
-			return height;
+				if (!float.TryParse(heightOrWeightInput, out heightOrWeight)) {
+					Console.WriteLine($"El valor ingresado de { heightOrWeightString } no es válido.");
+				}
+			} while (heightOrWeight <= 0);
 		}
 
-		public static double askForWeight() {
-			string weightInput;
-			double weight = -1;
-
-			Console.WriteLine("Ingrese su peso en kg (puede usar coma). Ejemplo: 80,7");
-			weightInput = Console.ReadLine();
-
-			try {
-				weight = double.Parse(weightInput);
-			} catch (Exception) {
-				Console.WriteLine("El valor ingresado de peso no es válido.");
-			}
-
-			return weight;
-		}
-
-		public static double calcBMI(double height, double weight) {
-            return weight / Math.Pow(height, 2);
+		public static float calcBMI(float height, float weight) {
+            return (float) (weight / Math.Pow(height, 2));
         }
 
-		public static string getCategoryConsidering(double bmi) {
+		public static string getCategoryConsidering(float bmi) {
 			string category = "";
 
 			if (bmi < 18.50) {
@@ -56,7 +38,7 @@ namespace PW3_2021_2c_Clase_1.Logica {
 			return category;
 		}
 
-		public static string getSubcategoryConsidering(double bmi) {
+		public static string getSubcategoryConsidering(float bmi) {
 			string subCategory = "";
 			
 			if (bmi < 18.50) {
