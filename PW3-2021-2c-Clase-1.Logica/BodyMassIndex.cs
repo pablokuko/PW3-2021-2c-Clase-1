@@ -14,7 +14,7 @@ namespace PW3_2021_2c_Clase_1.Logica {
 				Console.WriteLine($"Ingrese su { heightOrWeightString } en m (puede usar coma). Ejemplo: { example }");
 				heightOrWeightInput = Console.ReadLine();
 
-				if (!float.TryParse(heightOrWeightInput, out heightOrWeight)) {
+				if (!float.TryParse(heightOrWeightInput, out heightOrWeight) || heightOrWeight <= 0) {
 					Console.WriteLine($"El valor ingresado de { heightOrWeightString } no es válido.");
 				}
 			} while (heightOrWeight <= 0);
