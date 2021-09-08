@@ -7,8 +7,9 @@ namespace Clase_1_2021_1c.Consola
     {
         static void Main(string[] args)
         {
-            EjercicioBola8Magica();
-            //EjericicioCalculadora();
+            //EjercicioBola8Magica();
+            //EjercicioCalculadora();
+            EjercicioIndiceMasaCorporal();
         }
 
         private static void EjercicioBola8Magica()
@@ -39,5 +40,22 @@ namespace Clase_1_2021_1c.Consola
             //Console.WriteLine("La suma es: " + Calculadora.Sumar(strNum1, strNum2));
             Console.WriteLine($"La suma es: {Calculadora.Sumar(strNum1, strNum2)}");
         }
+
+        private static void EjercicioIndiceMasaCorporal()
+        {
+
+            Console.WriteLine("Ingrese su peso:");
+            string peso = Console.ReadLine();
+
+            Console.WriteLine("Ingrese su altura:");
+            string altura = Console.ReadLine();
+
+            double imc = IndiceMasaCorporal.calcularIMC(peso, altura);
+
+            Console.WriteLine($"Su índice de masa corporal es de: {imc}. {IndiceMasaCorporal.calcularMasaCorporal(imc)}");
+
+
+        }
+
     }
 }
